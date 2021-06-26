@@ -88,13 +88,6 @@ Categories=Settings;" > ~/.local/share/applications/chicago95plus.desktop
     
 fi
 
-if [ "$(whoami)" == "root" ]; then
-    echo "You're not meant to run it as root."
-    exit 1
-else
-    echo "Congratulation, you did the thing. Script can now go brrr."
-fi
-
 chicagodir=/
 while [ -d "$chicagodir" ]; do
     chicagodir="/tmp/ChicagoStuff$RANDOM"
@@ -184,6 +177,13 @@ true
 
 
 exit 0
+fi
+
+if [ "$(whoami)" == "root" ]; then
+    echo "You're not meant to run it as root."
+    exit 1
+else
+    echo "Congratulation, you did the thing. Script can now go brrr."
 fi
 
 sudo bash "$0" --rootland "$chicagodir" && bash "$0" --userland "$chicagodir"
