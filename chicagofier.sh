@@ -99,7 +99,7 @@ Categories=Settings;" > ~/.local/share/applications/chicago95plus.desktop
     clear
     echo "Welcome to Chicago 95. The system will now restart."
     sleep 2
-    systemctl -i restart
+    systemctl -i reboot
     sleep 2
     reboot
     
@@ -216,6 +216,8 @@ Before we begin, huge shout-outs to grassmunk and everyone else who has contribu
 
 You can find the original repository at https://github.com/grassmunk/Chicago95. The only thing I've made out of all of this is this mere script.
 
-PRESS ENTER to continue. (a 'sudo password' prompt will follow, enter your normal password in it to run the script)"
+PRESS ENTER to continue. (a 'sudo password' prompt will follow, enter your normal password in it to run the script)
+
+"
 
 sudo bash "$0" --rootland "$chicagodir" && bash "$0" --userland "$chicagodir"
