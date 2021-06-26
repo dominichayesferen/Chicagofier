@@ -9,6 +9,10 @@ if [ "$1" == "--userland" ]; then
     #Cleanup prior installs
     rm -rf /home/$useris/.themes/Chicago95 /home/$useris/.icons/Chicago95 /home/$useris/.Chicago95PlusFiles /home/$useris/.Chicago95Plus /home/$useris/.chicago95plus "/home/$useris/.icons/Chicago95 Animated Hourglass Cursors" "/home/$useris/.icons/Chicago95_Cursor_Black" "/home/$useris/.icons/Chicago95_Cursor_White" "/home/$useris/.icons/Chicago95_Emerald" "/home/$useris/.icons/Chicago95 Standard Cursors" "/home/$useris/.icons/Chicago95 Standard Cursors Black"
     rm -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme /home/$useris/Downloads/Chicago95.theme /home/$useris/.local/share/applications/chicago95plus.desktop /home/$useris/.chicago95plus /home/$useris/.config/gtk-3.0/gtk.css
+    if grep -q "Windows 95" /home/$useris/.bashrc; then
+        rm -f /home/$useris/.bashrc
+        cp -f /etc/skel/.bashrc /home/$useris/.bashrc
+    fi
     
     if [ ! -d "$2" ] || [ -z "$2" ]; then
         echo "No. There is no folder here."
