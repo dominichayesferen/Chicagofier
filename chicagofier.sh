@@ -1,6 +1,11 @@
 #!/bin/bash
 
 if [ "$1" == "--userland" ]; then
+    if [ "$(whoami)" == "root" ]; then
+        echo "No."
+        #TODO: echo 'exit' and then running the command in userland mode as automatic follow-up commands in the Terminal
+        exit 1
+    fi
     if [ ! -d "$2" ]; then
         echo "No. There is no folder here."
         exit 1
@@ -92,4 +97,9 @@ apt-get install epiphany-browser -y
 apt-get purge firefox* -y
 
 echo "That's it right now. There's more to come."
+
+#TODO: Automatically echo running userland into the same Terminal and all I guess.
+
+
+
 exit 0
