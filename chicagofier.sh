@@ -6,6 +6,10 @@ set +m
 if [ "$1" == "--userland" ]; then
     useris="$(whoami)"
     
+    #Cleanup prior installs
+    rm -rf /home/$useris/.themes/Chicago95 /home/$useris/.icons/Chicago95 /home/$useris/.Chicago95PlusFiles /home/$useris/.Chicago95Plus /home/$useris/.chicago95plus "/home/$useris/.icons/Chicago95 Animated Hourglass Cursors" "/home/$useris/.icons/Chicago95_Cursor_Black" "/home/$useris/.icons/Chicago95_Cursor_White" "/home/$useris/.icons/Chicago95_Emerald" "/home/$useris/.icons/Chicago95 Standard Cursors" "/home/$useris/.icons/Chicago95 Standard Cursors Black"
+    rm -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme /home/$useris/Downloads/Chicago95.theme /home/$useris/.local/share/applications/chicago95plus.desktop /home/$useris/.chicago95plus /home/$useris/.config/gtk-3.0/gtk.css
+    
     if [ ! -d "$2" ] || [ -z "$2" ]; then
         echo "No. There is no folder here."
         exit 1
@@ -13,10 +17,10 @@ if [ "$1" == "--userland" ]; then
     
     cd "$2/Chicago95"
     
-    rm -rf /home/$useris/.themes/Chicago95
-    while [ ! -d /home/$useris/.themes/Chicago95 ]; do
+    rm -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme
+    while [ ! -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme ]; do
         python3 ./installer.py
-        if [ ! -d /home/$useris/.themes/Chicago95 ]; then
+        if [ ! -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme ]; then
             clear
             echo "You cheated not only the script, but yourself.
 
@@ -112,6 +116,9 @@ if [ ! -d "$2" ] || [ -z "$2" ]; then
     echo "No. There is no folder here."
     exit 1
 fi
+
+#Cleanup prior installs
+rm -rf /usr/share/themes/Chicago95 /usr/share/icons/Chicago95 /usr/share/plymouth/themes/Chicago95 /usr/share/Chicago95Backgrounds "/usr/share/icons/Chicago95 Animated Hourglass Cursors" "/usr/share/icons/Chicago95_Cursor_Black" "/usr/share/icons/Chicago95_Cursor_White" "/usr/share/icons/Chicago95_Emerald" "/usr/share/icons/Chicago95 Standard Cursors" "/usr/share/icons/Chicago95 Standard Cursors Black"
 
 apt update
 clear
