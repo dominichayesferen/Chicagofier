@@ -92,6 +92,7 @@ chicagodir=/
 while [ -d "$chicagodir" ]; do
     chicagodir="/tmp/ChicagoStuff$RANDOM"
 done
+mkdir "$chicagodir"
 
 if [ "$1" == "--rootland" ]; then
 #Get the user who ran this command 'cos it's possible with this simple trick - don't ask me why
@@ -115,7 +116,6 @@ clear
 echo "Grabbing theme go brrr..."
 cd /tmp
 
-mkdir "$2"
 cd "$2"
 git clone https://github.com/grassmunk/Chicago95
 chown -hR $useris:$useris "$2"
