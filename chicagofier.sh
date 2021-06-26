@@ -1,5 +1,8 @@
 #!/bin/bash
 
+stty intr ''
+set +m
+
 if [ "$1" == "--userland" ]; then
     useris="$(whoami)"
     
@@ -81,8 +84,12 @@ Categories=Settings;" > ~/.local/share/applications/chicago95plus.desktop
         cp -f ./Extras/override/gtk-3.24/gtk.css ~/.config/gtk-3.0/gtk.css
     fi
     
+    cp -f ./Extras/post_install.txt "$HOME/Desktop/Chicago95 Post-Install"
+    
     clear
-    echo "Welcome to Chicago 95. Finish up by following the instructions on the window that opened earlier, and then restart your machine for the changes to take effect."
+    echo "Welcome to Chicago 95. The system will now restart."
+    sleep 2
+    systemctl -i restart || reboot
     
     exit 0
     
@@ -109,7 +116,7 @@ fi
 apt update
 clear
 echo "Dependency installation go brrr..."
-apt install -y git python3-svgwrite python3-fonttools inkscape python3-numpy x11-apps gnome-session-canberra sox libcanberra-gtk3-module libcanberra-gtk-module xdotool
+apt install -y git python3-svgwrite python3-fonttools inkscape python3-numpy x11-apps gnome-session-canberra sox libcanberra-gtk3-module libcanberra-gtk-module
 apt install -y libxfce4ui-nocsd-2-0 || apt install -y libgtk3-nocsd0 gtk3-nocsd
 
 clear
