@@ -1,6 +1,8 @@
 #!/bin/bash
 
 if [ "$1" == "--userland" ]; then
+    useris="$(whoami)"
+    
     if [ "$(whoami)" == "root" ]; then
         echo "No."
         #TODO: echo 'exit' and then running the command in userland mode as automatic follow-up commands in the Terminal
@@ -11,28 +13,30 @@ if [ "$1" == "--userland" ]; then
         exit 1
     fi
     
+    cd "$2/Chicago95"
+    
     rm -rf /home/$useris/.themes/Chicago95
     while [ ! -d /home/$useris/.themes/Chicago95 ]; do
         python3 ./installer.py &
         sleep 10
         read -p "
 
-    Install the theme. Yes.
-    Press ENTER here when it's done installing and you see that random instruction manual on screen. Don't close the instructions manual, though.
-    "
+Install the theme. Yes.
+Press ENTER here when it's done installing and you see that random instruction manual on screen. Don't close the instructions manual, though.
+"
         if [ ! -d /home/$useris/.themes/Chicago95 ]; then
             clear
             echo "You cheated not only the script, but yourself.
 
-    You didn't grow.
-    You didn't Chicagofy.
-    You tried to troll the script and gained nothing.
+You didn't grow.
+You didn't Chicagofy.
+You tried to troll the script and gained nothing.
 
-    You wasted your time.
-    Nothing was done and nothing was gained.
+You wasted your time.
+Nothing was done and nothing was gained.
 
-    It's sad that you even bothered trying this.
-    Now just install the theme already."
+It's sad that you even bothered trying this.
+Now just install the theme already."
         fi
     done
 
