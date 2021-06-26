@@ -95,7 +95,9 @@ Categories=Settings;" > ~/.local/share/applications/chicago95plus.desktop
     clear
     echo "Welcome to Chicago 95. The system will now restart."
     sleep 2
-    systemctl -i restart || reboot
+    systemctl -i restart
+    sleep 2
+    reboot
     
     exit 0
     
