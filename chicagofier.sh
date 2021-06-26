@@ -114,6 +114,9 @@ done
 mkdir "$chicagodir"
 
 if [ "$1" == "--rootland" ]; then
+echo "Congratulation, you did the thing. Script can now go brrr."
+
+
 #Get the user who ran this command 'cos it's possible with this simple trick - don't ask me why
 useris=$(who | head -n1 | awk '{print $1;}')
 if [ "$useris" == "root" ]; then
@@ -204,8 +207,6 @@ fi
 if [ "$(whoami)" == "root" ]; then
     echo "You're not meant to run it as root."
     exit 1
-else
-    echo "Congratulation, you did the thing. Script can now go brrr."
 fi
 
 sudo bash "$0" --rootland "$chicagodir" && bash "$0" --userland "$chicagodir"
