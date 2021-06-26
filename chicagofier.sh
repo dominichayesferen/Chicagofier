@@ -17,6 +17,8 @@ if [ "$1" == "--userland" ]; then
     
     cd "$2/Chicago95"
     
+    clear
+    
     rm -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme
     while [ ! -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme ]; do
         python3 ./installer.py
