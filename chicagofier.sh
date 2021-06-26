@@ -209,4 +209,13 @@ if [ "$(whoami)" == "root" ]; then
     exit 1
 fi
 
+clear
+read -p "Welcome to Chicagofier, an unofficial script to do the transformation of XFCE into the Chicago95 look.
+
+Before we begin, huge shout-outs to grassmunk and everyone else who has contributed to Chicago95. Without all of you this wouldn't be possible to do.
+
+You can find the original repository at https://github.com/grassmunk/Chicago95. The only thing I've made out of all of this is this mere script.
+
+PRESS ENTER to continue. (a 'sudo password' prompt will follow, enter your normal password in it to run the script)"
+
 sudo bash "$0" --rootland "$chicagodir" && bash "$0" --userland "$chicagodir"
