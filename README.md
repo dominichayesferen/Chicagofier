@@ -1,5 +1,5 @@
 # Chicagofier
-#### Unofficial fan-made script for transforming a system with the Chicago95 theme (currently only supports Xubuntu)
+#### Unofficial fan-made script for transforming a system with the [Chicago95](https://github.com/grassmunk/Chicago95) theme (currently only supports Xubuntu)
 
 Chicago95 is an AMAZING theme for XFCE, however its held back by its Terminal-heavy installation procedure for getting the full transformation. This script is a script that transforms an install of XFCE with very little user interaction required, making the whole transformation more noob-friendly to pull off. Additionally, it also includes some patches for the Chicago95 experience, and integrates Chicago95 Plus into the applications menu.
 
@@ -83,4 +83,4 @@ You're done, enjoy Chicago95!
 -----
 
 ### Code and license
-License: GPL-2.0 (check Chicago95's own repository for their own license)
+License: GPL-2.0 (check [Chicago95's own repository](https://github.com/grassmunk/Chicago95) for their own license)
