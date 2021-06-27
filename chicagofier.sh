@@ -97,9 +97,7 @@ Categories=Settings;" > ~/.local/share/applications/chicago95plus.desktop
     cp -f ./Extras/post_install.txt "$HOME/Desktop/Chicago95 Post-Install"
     
     clear
-    echo "Welcome to Chicago 95. The system will now restart."
-    sleep 2
-    systemctl -i reboot
+    echo "Welcome to Chicago 95. The system will now restart." || systemctl -i reboot
     sleep 2
     reboot
     
