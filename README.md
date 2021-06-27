@@ -70,6 +70,8 @@ Your computer will restart. But you're not done yet.
 
 To finish things off, open the "Chicago95 Post-Install" file on your Desktop, and follow the instructions on there ("XFCE Settings Manager" is the Settings window).
 
+#### TIP: In the Browse Icons dialog, change the 'select icons from' to "Image Files" and then right-click the files pane and select "Show Hidden Files" to see the .themes folder when applying the icon for the Whisker Start button.
+
 ### Step 10
 
 You're done, enjoy Chicago95!
