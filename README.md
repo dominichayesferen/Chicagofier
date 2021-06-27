@@ -3,7 +3,7 @@
 
 Chicago95 is an AMAZING theme for XFCE, however its held back by its Terminal-heavy installation procedure for getting the full transformation*. This script is a script that transforms an install of XFCE with very little user interaction required, making the whole transformation more noob-friendly to pull off. Additionally, it also includes some patches for the Chicago95 experience, and integrates Chicago95 Plus into the applications menu.
 
-*You can also use the repository and .deb packages, though, if that suits you. No idea how much of the transformation happens when doing this method in Xubuntu, though. If anyone wants to contribute distro-agnostic-ness to this script, however, I guess it'd have the additional point of being a noob-friendlier method for other Linux Distros there aren't yet Chicago95 packages for.
+*You can also use the repository and .deb packages, though, if that suits you. No idea how much of the transformation happens when doing this method in Xubuntu, though. If anyone wants to contribute distro-agnostic-ness to this script, however, I guess it'd have the additional point of being a noob-friendlier method for other Linux Distros there aren't yet Chicago95 packages for (e.g.: Solus).
 
 #### Patches to Chicago95:
 
