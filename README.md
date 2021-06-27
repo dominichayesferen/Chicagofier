@@ -36,8 +36,9 @@ Open a Terminal in the current folder.
 
 ### Step 4
 
-Run the script in the Terminal window (`bash ./chicagofier.sh`)
+Run the script in the Terminal window (`bash ./chicagofier.sh`) and then read the message shown, followed by pressing ENTER and inputting your password after.
 <img src="screenshots/step2.png" alt="Running chicagofier.sh in Terminal"/>
+<img src="screenshots/step3.png" alt="The message and password"/>
 
 ### Step 5
 
