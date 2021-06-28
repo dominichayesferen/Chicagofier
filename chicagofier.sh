@@ -158,9 +158,21 @@ cp -Rfv ./Theme/Chicago95 /usr/share/themes/
 cp -Rfv ./Icons/Chicago95 /usr/share/icons/
 
 clear
-echo "Installing a better browser that doesn't look like s***..."
-apt install epiphany-browser -y
-apt purge firefox* -y
+read -p "Alright, I have a question for you. Firefox... doesn't look that great in this theme... since it's, y'know, Mozilla Firefox with the 'Proton' design. (that and the GTK theme just isn't designed for Firefox)
+
+I would add functionality to this script to give Firefox the Redmond-Firefox UserChrome Style ( https://github.com/matthewmx86/Redmond-Firefox ), but... that's currently broken.
+
+So, instead of that, would you like the script to replace Firefox with a browser that complements this theme (Epiphany)? [y/N] " firefoxquestion
+case "$firefoxquestion" in
+    [yY][eE][sS]|[yY]) 
+        echo "Installing a browser that doesn't look like crud with this theme on..."
+	apt install epiphany-browser -y
+	apt purge firefox* -y
+        ;;
+    *)
+        :
+        ;;
+esac
 
 clear
 echo "Configuring LightDM GTK+ Greeter (the login screen program Xubuntu uses)..."
