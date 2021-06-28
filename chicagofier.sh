@@ -112,13 +112,13 @@ done
 mkdir "$chicagodir"
 
 if [ "$1" == "--rootland" ]; then
-echo "Congratulation, you did the thing. Script can now go brrr."
+echo "Congratulation, script will now go brrr."
 
 
 #Get the user who ran this command 'cos it's possible with this simple trick - don't ask me why
 useris=$(who | head -n1 | awk '{print $1;}')
 if [ "$useris" == "root" ]; then
-    echo "Wait what the heck, that isn't how you run the script. You run it with sudo dammit. (how did you even do it this wrong?)"
+    echo "Wait what on earth, that isn't how you run the script. You run it with sudo. (how did you even do it this wrong?)"
     exit 1
 fi
 if [ ! -d "$2" ] || [ -z "$2" ]; then
@@ -158,7 +158,7 @@ cp -Rfv ./Theme/Chicago95 /usr/share/themes/
 cp -Rfv ./Icons/Chicago95 /usr/share/icons/
 
 clear
-read -p "Alright, I have a question for you. Firefox... doesn't look that great in this theme... since it's, y'know, Mozilla Firefox with the 'Proton' design. (that and the GTK theme just isn't designed for Firefox)
+read -p "Alright, I have a question for you. Mozilla Firefox... doesn't look that great in this theme... since it's, y'know, Mozilla Firefox with the 'Proton' design. (that and the GTK theme just isn't designed for Firefox)
 
 I would add functionality to this script to give Firefox the Redmond-Firefox UserChrome Style ( https://github.com/matthewmx86/Redmond-Firefox ), but... that's currently broken.
 
@@ -215,7 +215,7 @@ exit 0
 fi
 
 if [ "$(whoami)" == "root" ]; then
-    echo "You're not meant to run it as root."
+    echo "You're not meant to run it as root here."
     exit 1
 fi
 
