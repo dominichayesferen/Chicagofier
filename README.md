@@ -57,28 +57,28 @@ Go through the Setup process while leaving everything on their defaults.
 <img src="screenshots/step5.png" alt="Chicago95 Setup Page 2"/>
 <img src="screenshots/step6.png" alt="Chicago95 Setup Page 3"/>
 
-### Step 6
+### Step 7
 
 Again, let the installation happen.
 <img src="screenshots/step7.png" alt="Chicago95 Setup Installation Process"/>
 
-### Step 7
+### Step 8
 
 Once it's done, you'll see this page of Setup, and a Text Editor window. Click 'Finish'.
 <img src="screenshots/step8.png" alt="Chicago95 Setup Installation Finished"/>
 
-### Step 8
+### Step 9
 
 Your computer will restart. But you're not done yet.
 <img src="screenshots/step9.png" alt="Your computer will restart"/>
 
-### Step 9
+### Step 10
 
 To finish things off, open the "Chicago95 Post-Install" file on your Desktop, and follow the instructions on there ("XFCE Settings Manager" is the Settings window).
 
 #### TIP: In the Browse Icons dialog, change the 'select icons from' to "Image Files" and then right-click the files pane and select "Show Hidden Files" to see the .themes folder when applying the icon for the Whisker Start button.
 
-### Step 10
+### Step 11
 
 You're done, enjoy Chicago95!
 
