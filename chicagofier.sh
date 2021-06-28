@@ -47,13 +47,20 @@ Now just install the theme already."
     xfconf-query -c xsettings -p /Gtk/DialogsUseHeader -s false
     xfconf-query -c xsettings -p /Net/SoundThemeName -s Chicago95
     
-    
+    clear
     echo "Linking backgrounds into Pictures..."
     ln -sf /usr/share/Chicago95Backgrounds ~/Pictures/Chicago95
     mkdir ~/.Chicago95PlusFiles
     
+    clear
     echo "Copying default theme .theme file into Home..."
     cp -f ./Extras/Chicago95.theme ~/Downloads/
+    
+    clear
+    echo "Adding Chicago95 sound to startup..."
+    mkdir ~/.config; mkdir ~/.config/autostart
+    cp -f ./sounds/chicago95-startup.desktop ~/.config/autostart/chicago95-startup.desktop
+    chmod +x ~/.config/autostart/chicago95-startup.desktop
     
     clear
     echo "Installing Chicago95 Plus..."
@@ -69,8 +76,8 @@ python3 '"$HOME"'/.Chicago95Plus/PlusGUI.py' > ~/.chicago95plus
     chmod +x ~/.chicago95plus
     echo "[Desktop Entry]
 Version=1.0
-Name=Plus! Theme Manager
-GenericName=Theme Manager
+Name=Chicago95 Plus!
+GenericName=Plus! Theme Manager
 Comment=Change the look of your Desktop
 Exec=$HOME/.chicago95plus
 Terminal=true
@@ -197,6 +204,10 @@ update-alternatives --set default.plymouth /usr/share/plymouth/themes/Chicago95/
 clear
 echo "Updating boot files go brrr..."
 update-initramfs -u -k all
+
+clear
+echo "Installing sounds..."
+cp -Rf ./sounds/Chicago95 /usr/share/sounds/
 
 clear
 echo "Installing Backgrounds..."
