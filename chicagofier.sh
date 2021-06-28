@@ -8,7 +8,7 @@ if [ "$1" == "--userland" ]; then
     
     #Cleanup prior installs
     rm -rf /home/$useris/.themes/Chicago95 /home/$useris/.icons/Chicago95 /home/$useris/.Chicago95PlusFiles /home/$useris/.Chicago95Plus /home/$useris/.chicago95plus "/home/$useris/.icons/Chicago95 Animated Hourglass Cursors" "/home/$useris/.icons/Chicago95_Cursor_Black" "/home/$useris/.icons/Chicago95_Cursor_White" "/home/$useris/.icons/Chicago95_Emerald" "/home/$useris/.icons/Chicago95 Standard Cursors" "/home/$useris/.icons/Chicago95 Standard Cursors Black"
-    rm -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme /home/$useris/Downloads/Chicago95.theme /home/$useris/.local/share/applications/chicago95plus.desktop /home/$useris/.chicago95plus /home/$useris/.config/gtk-3.0/gtk.css
+    rm -f /home/$useris/.local/share/xfce4/terminal/colorschemes/Chicago95.theme /home/$useris/Downloads/Chicago95.theme /home/$useris/.local/share/applications/chicago95plus.desktop /home/$useris/.chicago95plus /home/$useris/.config/gtk-3.0/gtk.css ~/.config/autostart/chicago95-startup.desktop
     if grep -q "Windows 95" /home/$useris/.bashrc; then
         rm -f /home/$useris/.bashrc
         cp -f /etc/skel/.bashrc /home/$useris/.bashrc
@@ -134,7 +134,7 @@ if [ ! -d "$2" ] || [ -z "$2" ]; then
 fi
 
 #Cleanup prior installs
-rm -rf /usr/share/themes/Chicago95 /usr/share/icons/Chicago95 /usr/share/plymouth/themes/Chicago95 /usr/share/Chicago95Backgrounds "/usr/share/icons/Chicago95 Animated Hourglass Cursors" "/usr/share/icons/Chicago95_Cursor_Black" "/usr/share/icons/Chicago95_Cursor_White" "/usr/share/icons/Chicago95_Emerald" "/usr/share/icons/Chicago95 Standard Cursors" "/usr/share/icons/Chicago95 Standard Cursors Black"
+rm -rf /usr/share/themes/Chicago95 /usr/share/icons/Chicago95 /usr/share/plymouth/themes/Chicago95 /usr/share/Chicago95Backgrounds "/usr/share/icons/Chicago95 Animated Hourglass Cursors" "/usr/share/icons/Chicago95_Cursor_Black" "/usr/share/icons/Chicago95_Cursor_White" "/usr/share/icons/Chicago95_Emerald" "/usr/share/icons/Chicago95 Standard Cursors" "/usr/share/icons/Chicago95 Standard Cursors Black" /usr/share/sounds/Chicago95
 
 apt update
 clear
@@ -173,8 +173,8 @@ So, instead of that, would you like the script to replace Firefox with a browser
 case "$firefoxquestion" in
     [yY][eE][sS]|[yY]) 
         echo "Installing a browser that doesn't look like crud with this theme on..."
-	apt install epiphany-browser -y
-	apt purge firefox* -y
+        apt install epiphany-browser -y
+        apt purge firefox* -y
         ;;
     *)
         :
@@ -208,6 +208,7 @@ update-initramfs -u -k all
 clear
 echo "Installing sounds..."
 cp -Rf ./sounds/Chicago95 /usr/share/sounds/
+cp -f "./Extras/Microsoft Windows 95 Startup Sound.ogg" /usr/share/sounds/Chicago95/startup.ogg
 
 clear
 echo "Installing Backgrounds..."
