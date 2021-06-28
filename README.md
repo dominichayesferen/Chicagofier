@@ -17,7 +17,7 @@ Chicago95 is an AMAZING theme for XFCE, however its held back by its Terminal-he
 
 #### Notes
 
-- Firefox will be replaced with Epiphany during installation since Firefox looks bad/unfitting for one (especially in this theme) and two Epiphany fits better in this theme
+- Firefox will be (with your permission) replaced with Epiphany during installation since Firefox looks bad/unfitting for one (especially in this theme) and two Epiphany fits better in this theme
 
 -----
 
@@ -44,7 +44,11 @@ Run the script in the Terminal window (`bash ./chicagofier.sh`) and then read th
 
 ### Step 5
 
-Leave the Terminal to do its thing. Eventually it'll end up showing the screen shown in the image below.
+Leave the Terminal to do its thing. Eventually it'll end up asking you if you'd like to replace Firefox with another browser. When it does, choose as you'd like. It is your choice if you replace Firefox or not.
+
+### Step 6
+
+Leave the Terminal to do its thing, again. Eventually it'll end up showing the screen shown in the image below.
 <img src="screenshots/step4.png" alt="Chicago95 Setup"/>
 
 ### Step 6
