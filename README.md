@@ -1,4 +1,8 @@
 # Chicagofier
+
+As seen on Michael MJD's video at https://www.youtube.com/watch?v=j5UeSj2F-yc!
+
+
 #### Unofficial fan-made script for transforming a system with the [Chicago95](https://github.com/grassmunk/Chicago95) theme (currently only supports Xubuntu)
 
 Chicago95 is an AMAZING theme for XFCE, however its held back by its Terminal-heavy installation procedure for getting the full transformation*. This script is a script that transforms an install of XFCE with very little user interaction required, making the whole transformation more noob-friendly to pull off. Additionally, it also includes some patches for the Chicago95 experience, and integrates Chicago95 Plus into the applications menu.
@@ -12,7 +16,7 @@ Chicago95 is an AMAZING theme for XFCE, however its held back by its Terminal-he
 
 #### Requirements
 
-- Xubuntu 18.04 or newer (only tested on Xubuntu 20.04)
+- Xubuntu 18.04 or newer (only tested on Xubuntu 20.04 LTS)
 - Being logged in as an administrator account (first user's an administrator)
 
 #### Notes
