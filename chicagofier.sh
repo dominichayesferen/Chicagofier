@@ -114,8 +114,10 @@ Categories=Settings;" > ~/.local/share/applications/chicago95plus.desktop
     
     cp -f ./Extras/post_install.txt "$HOME/Desktop/Chicago95 Post-Install"
     
+    killall mousepad
+    
     clear
-    echo "Please install the themes for the browsers that have been opened by this script. Once done, press ENTER in this Terminal."
+    read -p "Please install the themes for the browsers that have been opened by this script. Once done, press ENTER in this Terminal."
     
     clear
     echo "Welcome to Chicago 95. The system will now restart."
