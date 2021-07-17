@@ -73,6 +73,12 @@ Once it's done, you'll see this page of Setup, and a Text Editor window. Click '
 
 ### Step 9
 
+Now you're done, if you choose to keep Firefox or chose to install Pale Moon, you'll now need to wait for the respective browser(s) to open up automatically so that you can install their appropriate themes to match Chicago95's theme.
+
+Once you're done, close the browsers and press ENTER in the Terminal window.
+
+### Step 9
+
 Your computer will restart. But you're not done yet.
 <img src="screenshots/step9.png" alt="Your computer will restart"/>
 
