@@ -194,7 +194,7 @@ Pick one [1/2/N] " firefoxquestion
 case "$firefoxquestion" in
     [1]) 
         palemonans="5"
-        while [ "$palemonans" != "1" ] || [ "$palemonans" != "2" ] || [ "$palemonans" != "3" ] || [ "$palemonans" != "4" ]; do
+        while [ "$palemonans" != "1" ] && [ "$palemonans" != "2" ] && [ "$palemonans" != "3" ] && [ "$palemonans" != "4" ]; do
             clear
             read -p "Installing a browser that doesn't look like crud with this theme on...
 But first... choose an Ubuntu version:
