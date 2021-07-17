@@ -155,7 +155,7 @@ rm -rf /usr/share/themes/Chicago95 /usr/share/icons/Chicago95 /usr/share/plymout
 apt update
 clear
 echo "Dependency installation go brrr..."
-apt install -y git python3-svgwrite python3-fonttools inkscape python3-numpy x11-apps gnome-session-canberra sox libcanberra-gtk3-module libcanberra-gtk-module python3
+apt install -y git python3-svgwrite python3-fonttools inkscape python3-numpy x11-apps gnome-session-canberra sox libcanberra-gtk3-module libcanberra-gtk-module python3 curl coreutils
 apt install -y libxfce4ui-nocsd-2-0 || apt install -y libgtk3-nocsd0 gtk3-nocsd
 
 clear
