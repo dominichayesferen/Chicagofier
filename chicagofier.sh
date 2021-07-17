@@ -41,6 +41,17 @@ It's sad that you even bothered trying this.
 Now just install the theme already."
         fi
     done
+    
+    if [ -f /usr/bin/firefox ] && [ -f "$2/chicago95_ie4_theme_yes.xpi" ]; then
+        clear
+        echo "Opening Firefox to install theme..."
+        firefox "file://$2/chicago95_ie4_theme_yes.xpi" >/dev/null 2>&1 &
+    fi
+    if [ -f /usr/bin/palemoon ]; then
+        clear
+        echo "Opening Pale Moon to install theme..."
+        palemoon "https://addons.palemoon.org/addon/moonscape/" >/dev/null 2>&1 &
+    fi
 
     clear
     echo "User configs go brrr..."
@@ -104,6 +115,9 @@ Categories=Settings;" > ~/.local/share/applications/chicago95plus.desktop
     cp -f ./Extras/post_install.txt "$HOME/Desktop/Chicago95 Post-Install"
     
     clear
+    echo "Please install the themes for the browsers that have been opened by this script. Once done, press ENTER in this Terminal."
+    
+    clear
     echo "Welcome to Chicago 95. The system will now restart."
     sleep 2
     systemctl -i reboot || reboot
@@ -139,7 +153,7 @@ rm -rf /usr/share/themes/Chicago95 /usr/share/icons/Chicago95 /usr/share/plymout
 apt update
 clear
 echo "Dependency installation go brrr..."
-apt install -y git python3-svgwrite python3-fonttools inkscape python3-numpy x11-apps gnome-session-canberra sox libcanberra-gtk3-module libcanberra-gtk-module
+apt install -y git python3-svgwrite python3-fonttools inkscape python3-numpy x11-apps gnome-session-canberra sox libcanberra-gtk3-module libcanberra-gtk-module python3
 apt install -y libxfce4ui-nocsd-2-0 || apt install -y libgtk3-nocsd0 gtk3-nocsd
 
 clear
@@ -169,15 +183,50 @@ read -p "Alright, I have a question for you. Mozilla Firefox... doesn't look tha
 
 I would add functionality to this script to give Firefox the Redmond-Firefox UserChrome Style ( https://github.com/matthewmx86/Redmond-Firefox ), but... that's currently broken.
 
-So, instead of that, would you like the script to replace Firefox with a browser that complements this theme (Epiphany)? [y/N] " firefoxquestion
+So, instead of that, would you like the script to:
+1: Replace Firefox with Pale Moon except it now has cool Netscape styling?
+2: Replace Firefox with a browser that... conveniently looks good with this theme?
+N: Just give you a minor Internet Explorer 4 skin on your Mozilla Firefox because you don't care or whatever?
+
+Pick one [1/2/N] " firefoxquestion
 case "$firefoxquestion" in
-    [yY][eE][sS]|[yY]) 
+    [1]) 
+        palemonans="5"
+        while [ "$palemonans" != "1" ] || [ "$palemonans" != "2" ] || [ "$palemonans" != "3" ] || [ "$palemonans" != "4" ]; do
+            clear
+            read -p "Installing a browser that doesn't look like crud with this theme on...
+But first... choose an Ubuntu version:
+
+1: Ubuntu 20.10 and newer
+2: Ubuntu 20.04
+3: Ubuntu 18.04 - 19.10
+4: Ubuntu 16.04 - 17.10
+
+Pick one [1-4] " palemonans
+        done
+        if [ "$palemonans" == "1" ]; then
+            relforpalemonrepo="20.10"
+        elif [ "$palemonans" == "2" ]; then
+            relforpalemonrepo="20.04"
+        elif [ "$palemonans" == "3" ]; then
+            relforpalemonrepo="18.04"
+        elif [ "$palemonans" == "4" ]; then
+            relforpalemonrepo="16.04"
+        fi
+        echo "deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_$relforpalemonrepo/ /" | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list
+        curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_$relforpalemonrepo/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/home_stevenpusser.gpg > /dev/null
+        apt update
+        apt install palemoon -y
+        apt purge firefox* -y
+        ;;
+    [2]) 
         echo "Installing a browser that doesn't look like crud with this theme on..."
         apt install epiphany-browser -y
         apt purge firefox* -y
         ;;
     *)
-        :
+        echo "Fine. You'll see Firefox open up later to install the theme."
+        wget https://github.com/grassmunk/Chicago95/raw/master/Extras/chicago5_ie4-1.0-an%2Bfx.xpi -O "$2/chicago95_ie4_theme_yes.xpi"
         ;;
 esac
 
