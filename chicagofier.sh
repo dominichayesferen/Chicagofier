@@ -180,6 +180,7 @@ echo "Installing stuff system-wide go brrr..."
 cp -Rfv ./Theme/Chicago95 /usr/share/themes/
 cp -Rfv ./Icons/Chicago95 /usr/share/icons/
 
+if [ -f /usr/bin/firefox ]; then
 clear
 read -p "Alright, I have a question for you. Mozilla Firefox... doesn't look that great in this theme... since it's, y'know, Mozilla Firefox with the 'Proton' design. (that and the GTK theme just isn't designed for Firefox)
 
@@ -231,6 +232,7 @@ Pick one [1-4] " palemonans
         wget https://github.com/grassmunk/Chicago95/raw/master/Extras/chicago5_ie4-1.0-an%2Bfx.xpi -O "$2/chicago95_ie4_theme_yes.xpi"
         ;;
 esac
+fi
 
 clear
 echo "Configuring LightDM GTK+ Greeter (the login screen program Xubuntu uses)..."
